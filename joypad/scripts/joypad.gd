@@ -7,14 +7,15 @@ var old_direction = Vector2()
 var connected = false
 
 # Directional
-var arm_height = Servant.new(1, 90, Vector2(60, 180))
-var arm_distance = Servant.new(2, 90, Vector2(100, 180))
+var arm_height = Servant.new(1, 90, Vector2(80, 180), 2)
+var arm_distance = Servant.new(2, 90, Vector2(60, 180), 2)
 var base = Servant.new(3, 90, Vector2(20, 170))
-var claw = Servant.new(0, 180, Vector2(0, 180))
+var claw = Servant.new(0, 180, Vector2(90, 180))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	socket.connect_to_url("ws://192.168.4.1/websocket")	
+	socket.set_no_delay(true)
 	old_direction = $analog.direction.normalized()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,7 +39,7 @@ func _process(delta):
 		print_console("[color=\"#F44336\"]WebSocket closed with code: " + str(code) + "[/color]")
 		connected = false
 		set_process(false) # Stop processing.
-
+	
 	move_servant($directional_one.direction.y, arm_height)
 	move_servant($directional_one.direction.x, base)
 	move_servant($directional_two.direction.y, arm_distance)
@@ -52,17 +53,12 @@ func _process(delta):
 		var speedRight = clamp(roundi(speed.y - speed.x), -100, 100)
 		socket.send_text(str({ "speedLeft": speedLeft, "speedRight": speedRight }))
 
-func print_console(text):
-	$console/container/log.text = $console/container/log.text + text + "\n"
-
 func move_servant(direction, servant):
-	if direction < 0 and servant.position < servant.limit.y:
+	if direction < 0 and servant.position + servant.step <= servant.limit.y:
 		servant.increment()
-		print(str({ "servant": servant.id, "position": servant.position }))
 		socket.send_text(str({ "servant": servant.id, "position": servant.position }))
-	elif direction > 0 and servant.position > servant.limit.x:
+	elif direction > 0 and servant.position - servant.step >= servant.limit.x:
 		servant.decrement()
-		print(str({ "servant": servant.id, "position": servant.position }))
 		socket.send_text(str({ "servant": servant.id, "position": servant.position }))
 
 func update_battery(battery):
@@ -72,6 +68,9 @@ func update_battery(battery):
 		$battery.text = "[color=\"#FF9800\"]" + ("%.2fV" % battery) + "[/color]"
 	else:
 		$battery.text = "[color=\"#8BC34A\"]" + ("%.2fV" % battery) + "[/color]"
+
+func print_console(text):
+	$console/container/log.text = $console/container/log.text + text + "\n"
 
 func _on_btn_exit_pressed():
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)

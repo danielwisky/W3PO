@@ -18,7 +18,7 @@ const uint8_t PIN_LED = 15;
 
 VespaMotors motors;
 VespaServo servos[4];
-ServoSetting servoSettings[4] = { { 0, 180, 180 }, { 0, 180, 90 }, { 0, 180, 90 }, { 20, 170, 90 } };
+ServoSetting servoSettings[4] = { { 90, 180, 180 }, { 80, 180, 90 }, { 60, 180, 90 }, { 20, 170, 90 } };
 VespaBattery battery;
 
 uint8_t critic_battery = 0xFF;

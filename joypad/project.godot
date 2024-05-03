@@ -14,7 +14,9 @@ config/name="W3PO"
 config/version="1.0"
 run/main_scene="res://scenes/joypad.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-run/max_fps=10
+run/max_fps=50
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://assets/background.png"
 config/icon="res://assets/icons/Icon-64.png"
 
 [display]
