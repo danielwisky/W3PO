@@ -1,0 +1,59 @@
+[33mcommit 83b98261e3fb9993ae911c69121541b47cb9440d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Fri May 3 09:01:51 2024 -0300
+
+    update logic arduino
+
+[33mcommit 0f4fb9e3c4a91e26b06169d5501dd87f85f91104[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Thu May 2 20:18:55 2024 -0300
+
+    update logic arduino
+
+[33mcommit 22aa95af5edea46f74b269294df91ee27c7e33ad[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Thu May 2 11:00:38 2024 -0300
+
+    update joypad
+
+[33mcommit bc8d81591f402d346a0c75ef9fee006ca3c45823[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Tue Apr 30 21:44:24 2024 -0300
+
+    update joypad
+
+[33mcommit 726878302b68ad7ef7863c7acad8aededdeb094d[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Tue Apr 30 15:05:48 2024 -0300
+
+    Remove .DS_Store from everywhere
+
+[33mcommit 4d3ae0f4049b91fa4688317f69682800d68a0895[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Tue Apr 30 15:03:55 2024 -0300
+
+    update joypad
+
+[33mcommit 83492cba7988c8974db0bbb1bb3fe9967f7e0216[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Mon Apr 29 09:33:15 2024 -0300
+
+    update project
+
+[33mcommit 8bea51e3c739817c8c305c3eea0f3f79ac62ca5b[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Fri Apr 26 10:39:52 2024 -0300
+
+    Remove .DS_Store from everywhere
+
+[33mcommit 0df5d19b3a1e7a049c222ba3b016164311144cc4[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Fri Apr 26 10:39:39 2024 -0300
+
+    Remove .DS_Store from everywhere
+
+[33mcommit d93cd5299fcbfd4822f025b067862a85af6a3bf4[m
+Author: danielwisky <daniel-ddw@hotmail.com>
+Date:   Fri Apr 26 10:35:59 2024 -0300
+
+    initial commit

@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://crs0medl5ybcu"]
+
+[ext_resource type="PackedScene" uid="uid://d206f6olcvxti" path="res://scenes/analog.tscn" id="1_7mfrp"]
+[ext_resource type="Script" path="res://scripts/joypad.gd" id="1_8a7e6"]
+[ext_resource type="PackedScene" uid="uid://cnweuq1r71iv8" path="res://scenes/directional.tscn" id="3_k3b3k"]
+
+[node name="joypad" type="Node2D"]
+script = ExtResource("1_8a7e6")
+
+[node name="analog" parent="." instance=ExtResource("1_7mfrp")]
+position = Vector2(440, 730)
+
+[node name="directional_one" parent="." instance=ExtResource("3_k3b3k")]
+position = Vector2(1782, 820)
+scale = Vector2(2.5, 2.5)
+
+[node name="directional_two" parent="." instance=ExtResource("3_k3b3k")]
+position = Vector2(2142, 480)
+scale = Vector2(2.5, 2.5)
+
+[node name="title" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 360.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 30
+text = "W3PO - Robô Explorer"
+vertical_alignment = 1
+
+[node name="console" type="Panel" parent="."]
+offset_left = 886.0
+offset_top = 80.0
+offset_right = 1626.0
+offset_bottom = 480.0
+
+[node name="label" type="Label" parent="console"]
+layout_mode = 0
+offset_top = -60.0
+offset_right = 740.0
+offset_bottom = -10.0
+theme_override_font_sizes/font_size = 30
+text = "CONSOLE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="container" type="MarginContainer" parent="console"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="log" type="RichTextLabel" parent="console/container"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 26
+theme_override_font_sizes/bold_font_size = 26
+theme_override_font_sizes/italics_font_size = 26
+theme_override_font_sizes/bold_italics_font_size = 26
+theme_override_font_sizes/mono_font_size = 26
+bbcode_enabled = true
+scroll_following = true
+
+[node name="btn_limpar_console" type="Button" parent="console"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 420.0
+offset_right = 470.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 30
+text = "LIMPAR"
+
+[node name="footer" type="RichTextLabel" parent="."]
+offset_left = 886.0
+offset_top = 1100.0
+offset_right = 1626.0
+offset_bottom = 1150.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "[center]Feito com [color=\"#F44336\"]AMOR S2[/color][/center]"
+scroll_active = false
+
+[node name="btn_exit" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 50)
+offset_left = 2292.0
+offset_top = 20.0
+offset_right = 2492.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 30
+text = "SAIR"
+
+[node name="battery" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(140, 50)
+offset_left = 2142.0
+offset_top = 20.0
+offset_right = 2282.0
+offset_bottom = 70.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+
+[connection signal="pressed" from="console/btn_limpar_console" to="." method="_on_btn_limpar_console_pressed"]
+[connection signal="pressed" from="btn_exit" to="." method="_on_btn_exit_pressed"]

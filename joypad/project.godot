@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="W3PO"
+config/version="1.0"
+run/main_scene="res://scenes/joypad.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=10
+config/icon="res://assets/icons/Icon-64.png"
+
+[display]
+
+window/size/viewport_width=2532
+window/size/viewport_height=1170
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

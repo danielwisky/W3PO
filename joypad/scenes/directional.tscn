@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnweuq1r71iv8"]
+
+[ext_resource type="Texture2D" uid="uid://51up6e8fsxdp" path="res://assets/shadedDark11.png" id="1_58ksk"]
+[ext_resource type="Script" path="res://scripts/directional.gd" id="1_sy8v1"]
+[ext_resource type="Texture2D" uid="uid://ignw78yqc84j" path="res://assets/shadedDark04.png" id="2_b2imh"]
+
+[node name="directional" type="Node2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_sy8v1")
+
+[node name="base" type="Sprite2D" parent="."]
+texture = ExtResource("1_58ksk")
+metadata/_edit_lock_ = true
+
+[node name="stick" type="Sprite2D" parent="base"]
+texture = ExtResource("2_b2imh")
+
+[node name="top" type="TextureButton" parent="."]
+offset_left = -19.0
+offset_top = -60.0
+offset_right = 21.0
+offset_bottom = -20.0
+
+[node name="left" type="TextureButton" parent="."]
+offset_left = -60.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+
+[node name="right" type="TextureButton" parent="."]
+offset_left = 19.0
+offset_top = -21.0
+offset_right = 59.0
+offset_bottom = 19.0
+
+[node name="down" type="TextureButton" parent="."]
+offset_left = -19.0
+offset_top = 18.0
+offset_right = 21.0
+offset_bottom = 58.0
+
+[connection signal="mouse_entered" from="top" to="." method="_on_top_mouse_entered"]
+[connection signal="mouse_exited" from="top" to="." method="_on_top_mouse_exited"]
+[connection signal="mouse_entered" from="left" to="." method="_on_left_mouse_entered"]
+[connection signal="mouse_exited" from="left" to="." method="_on_left_mouse_exited"]
+[connection signal="mouse_entered" from="right" to="." method="_on_right_mouse_entered"]
+[connection signal="mouse_exited" from="right" to="." method="_on_right_mouse_exited"]
+[connection signal="mouse_entered" from="down" to="." method="_on_down_mouse_entered"]
+[connection signal="mouse_exited" from="down" to="." method="_on_down_mouse_exited"]
